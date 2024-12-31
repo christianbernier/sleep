@@ -127,8 +127,8 @@
 	}
 
 	.day-box {
-		width: var(--cal-cell-size);
-		font-size: calc(var(--cal-cell-size) / 2.5);
+		width: 100%;
+		text-align: center;
 		font-family: var(--sans-serif);
 		aspect-ratio: 1;
 		color: var(--light);
