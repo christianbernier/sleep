@@ -1,43 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 :root {
-  --dark: #010056;
-  --light: #fafafd;
+	--dark: #010056;
+	--light: #fafafd;
 
-  --serif: 'PT Serif', serif;
-  --sans-serif: 'PT Sans', sans-serif;
-  --font-sm: 16px;
-  --font-md: 18px;
-  --font-lg: 24px;
+	--serif: 'PT Serif', serif;
+	--sans-serif: 'PT Sans', sans-serif;
+	--font-sm: 16px;
+	--font-md: 18px;
+	--font-lg: 24px;
 
-  --margin-sm: 5px;
-  --margin-md: 10px;
-  --margin-lg: 20px;
-  --margin-xl: 40px;
+	--margin-sm: 5px;
+	--margin-md: 10px;
+	--margin-lg: 20px;
+	--margin-xl: 40px;
 
-  --border-xs: 2px;
-  --border-md: 3px;
-  --border-lg: 4px;
-  --border-xl: 5px;
+	--border-xs: 2px;
+	--border-md: 3px;
+	--border-lg: 4px;
+	--border-xl: 5px;
 }
 
 * {
-  font-family: var(--sans-serif);
+	font-family: var(--sans-serif);
 }
 
 body {
-  background: url('background.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: var(--light);
-  width: 100vw;
-  min-height: calc(100vh - 2 * var(--margin-lg));
-  height: fit-content;
-  margin: 0;
-  padding: var(--margin-lg) 0;
-  overflow-x: hidden;
-  overflow-y: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	background: url('background.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: var(--light);
+	width: 100vw;
+	min-height: calc(100vh - 2 * var(--margin-lg));
+	height: fit-content;
+	margin: 0;
+	padding: var(--margin-lg) 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }

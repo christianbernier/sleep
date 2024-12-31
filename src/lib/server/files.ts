@@ -1,7 +1,7 @@
-import type { Day } from "$lib";
-import { error } from "@sveltejs/kit";
-import { createReadStream, existsSync } from "node:fs";
-import { convertRowIntoDay, type AutoSleepCsvRow } from "./csv";
+import type { Day } from '$lib';
+import { error } from '@sveltejs/kit';
+import { createReadStream, existsSync } from 'node:fs';
+import { convertRowIntoDay, type AutoSleepCsvRow } from './csv';
 import * as csv from 'fast-csv';
 
 /**
@@ -11,7 +11,7 @@ import * as csv from 'fast-csv';
  * @returns A path to where the file should exist for that specific month.
  */
 export function getFilename(year: number, month: number) {
-  return `static/data/${year}/${year}-${month.toString().padStart(2, '0')}.csv`;
+	return `static/data/${year}/${year}-${month.toString().padStart(2, '0')}.csv`;
 }
 
 /**
@@ -19,11 +19,11 @@ export function getFilename(year: number, month: number) {
  * @param filename the path to the file
  */
 export function assertFileExists(filename: string) {
-  const doesExist = existsSync(filename);
+	const doesExist = existsSync(filename);
 
-  if (!doesExist) {
-    error(404, `File not found: ${filename}.`);
-  }
+	if (!doesExist) {
+		error(404, `File not found: ${filename}.`);
+	}
 }
 
 /**
@@ -33,12 +33,12 @@ export function assertFileExists(filename: string) {
  * or reject if an error is encountered.
  */
 export function parseFile(filename: string) {
-  return new Promise<Array<Day>>((resolve, reject) => {
-    const rows: Array<Day> = [];
-    createReadStream(filename)
-      .pipe(csv.parse({ headers: true }))
-      .on('error', error => reject(error))
-      .on('data', (row: AutoSleepCsvRow) => rows.push(convertRowIntoDay(row)))
-      .on('end', () => resolve(rows));
-  });
+	return new Promise<Array<Day>>((resolve, reject) => {
+		const rows: Array<Day> = [];
+		createReadStream(filename)
+			.pipe(csv.parse({ headers: true }))
+			.on('error', (error) => reject(error))
+			.on('data', (row: AutoSleepCsvRow) => rows.push(convertRowIntoDay(row)))
+			.on('end', () => resolve(rows));
+	});
 }

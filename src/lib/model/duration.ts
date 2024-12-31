@@ -1,11 +1,11 @@
-import type { Range } from "./range";
+import type { Range } from './range';
 
 /**
  * Represents a duration of time, in hours and minutes.
  */
 export interface Duration {
-  hours: number;
-  minutes: number;
+	hours: number;
+	minutes: number;
 }
 
 /**
@@ -14,7 +14,7 @@ export interface Duration {
  * @returns The total number of minutes in the provided duration.
  */
 export function durationInMinutes(duration: Duration) {
-  return duration.hours * 60 + duration.minutes;
+	return duration.hours * 60 + duration.minutes;
 }
 
 /**
@@ -26,9 +26,9 @@ export function durationInMinutes(duration: Duration) {
  * number if `d1` represents less time than `d2`.
  */
 export function durationComparator(d1: Duration, d2: Duration) {
-  const d1Minutes = durationInMinutes(d1);
-  const d2Minutes = durationInMinutes(d2);
-  return d1Minutes - d2Minutes;
+	const d1Minutes = durationInMinutes(d1);
+	const d2Minutes = durationInMinutes(d2);
+	return d1Minutes - d2Minutes;
 }
 
 /**
@@ -40,7 +40,10 @@ export function durationComparator(d1: Duration, d2: Duration) {
  * duration represents.
  */
 export function getDurationFractionOfRange(duration: Duration, range: Range<Duration>) {
-  return (durationInMinutes(duration) - durationInMinutes(range.min)) / (durationInMinutes(range.max) - durationInMinutes(range.min));
+	return (
+		(durationInMinutes(duration) - durationInMinutes(range.min)) /
+		(durationInMinutes(range.max) - durationInMinutes(range.min))
+	);
 }
 
 /**
@@ -50,9 +53,9 @@ export function getDurationFractionOfRange(duration: Duration, range: Range<Dura
  * @returns A string such as "6h 32m" for 6 hours, 32 minutes.
  */
 export function getDurationString(duration: Duration) {
-  if (duration.hours === 0) {
-    return `${duration.minutes}m`;
-  }
+	if (duration.hours === 0) {
+		return `${duration.minutes}m`;
+	}
 
-  return `${duration.hours}h ${duration.minutes}m`;
+	return `${duration.hours}h ${duration.minutes}m`;
 }
