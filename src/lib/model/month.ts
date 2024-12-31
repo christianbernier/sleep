@@ -25,7 +25,7 @@ export interface Month {
  */
 export function getMonthName(monthIndex: number) {
 	const dateTimeFormat = new Intl.DateTimeFormat('en-US', { month: 'long' });
-	const date = new Date(Date.UTC(2024, monthIndex % 12));
+	const date = new Date(Date.UTC(2024, (monthIndex - 1) % 12, 15));
 	return dateTimeFormat.format(date);
 }
 
