@@ -19,7 +19,7 @@ const inBedTimeGradient = chroma
 	.mode('hsl');
 
 const wakeUpTimeGradient = chroma
-	.scale([Color.BLACK, Color.BLACK, Color.BLUE, Color.GREEN, Color.PINK, Color.BLACK])
+	.scale([Color.BLACK, Color.BLACK, Color.RED, Color.GREEN, Color.PINK, Color.BLACK])
 	//       no time      9pm          6am         9am          12pm        9pm
 	.domain([-1, 0, 540, 720, 900, 1440]) // in minutes after 9pm
 	.mode('hsl');
